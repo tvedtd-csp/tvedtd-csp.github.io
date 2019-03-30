@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<title>Don Tvedt CSC135 Lab 3</title>
+		<style type="text/css"> 
+		.bckgrnd-img {
+		background-image: url(https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1335&q=80);
+		background-color: #cccccc;
+		height: 900px;
+		padding: 50px;
+		}
+		.form-start {
+		margin-right: 120px;
+		margin-bottom: 120px;
+		margin-left: 120px;
+		padding: 20px;
+		font-family: "Times New Roman", san-serif;
+		background-color: white;
+		}
+		h1 {
+		text-align: center;
+		}
+		h3 {
+		text-align: center;
+		margin-top: 30px;
+		margin-right: 20px;
+		margin-bottom: 30px;
+		margin-left: 20px;
+		background-color: green;
+		color: ghostwhite;
+		}
+		label {
+		margin-left: 20px;
+		}
+		input {
+		display: block;
+		margin-left: 20px;
+		}
+		select {
+		margin-left: 20px;
+		display: block;
+		}
+		textarea {
+		margin-left: 20px;
+		display: block;
+		}
+		button {
+		margin-left: 20px;
+		}
+		.radiobutton {
+		display: inline;
+		}
+		</style>
+	</head>
+<div class="bckgrnd-img">
+	<body>
+	<!--Don Tvedt CSC135 Lab 3-->
+		<div class="form-start">
+			<h1>Family Medicine Practice</h1>
+			<h3>Patient Information</h3>
+			<form>
+				<label for="firstname">First Name</label>
+				<input type="text" name="firstname">
+				<label for="lastname">Last Name</label>
+				<input type="text" name="lastname">
+				<label for="dob">Birth Date</label>
+				<input type="date" name="dob">
+				<label for="phoneday">Daytime Phone</label>
+				<input type="text" name="phoneday" pattern="[0-9]{9}">
+				<label for="phonenight">Evening Phone</label>
+				<input type="text" name="phonenight" pattern="[0-9]{9}">
+				<label for="firstvisit">Is this your first time visiting out office?</label>
+				<input class="radiobutton" type="radio" name="firstvisit" value="Yes">Yes
+				<input class="radiobutton" type="radio" name="firstvisit" value="No">No
+				<h3>Appointment Information</h3>
+				<label for="apptdate">Date</label>
+				<input type="date" name="apptdate">
+				<label for="time">Time</label>
+				<select id="time">
+					<option>8AM</option>
+					<option>10AM</option>
+					<option>12PM</option>
+					<option>2PM</option>
+					<option>4PM</option>
+				</select>
+				<label for="reasonforvisit">Please describe the reason for this visit</label>
+				<textarea name="reasonforvisit" rows="10" cols="60"></textarea>
+				<button type="submit"><b><i>Submit</i></b></button>
+			</form>
+		</div>
+	</body>
+</div>
+</html>
