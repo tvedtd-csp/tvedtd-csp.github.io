@@ -18,32 +18,45 @@
 		margin: auto;
 		}
 		</style>
-		<script>
-			function PlusOne()  //Finds the value in the text box, converts to an int and assigns it to value. 10-decimal is a parameter of parse int
-			{
-				var value = parseInt(document.getElementById('number').value, 10);
-				value = isNaN(value) ? 0 : value; // Checks if it is a number
-				value = value + 1; //Add 1
-				document.getElementById('number').value = value;  //Replace value of the textbox
-			}
-
-			function MinusOne()  //Finds the value in the text box, converts to an int and assigns it to value. 10-decimal is a parameter of parse int
-			{
-				var value = parseInt(document.getElementById('number').value, 10);
-				value = isNaN(value) ? 0 : value; // Checks if it is a number
-				value = value - 1; //Minus 1
-				document.getElementById('number').value = value; //Replace value of the textbox
-			}
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$("#plus").click(function(){
+			$("#number").attr("value",parseInt($("#number").val()) + 1);
+//			myvalue = myvalue + 1;
+//			$("#number").attr("value", myvalue);
+		});
+		$("#minus").click(function(){
+			var myvalue = parseInt(document.getElementById('number').value, 10);
+			myvalue = myvalue - 1;
+			$("#number").attr("value", myvalue);
+		});
+	});
+//			function PlusOne()  //Finds the value in the text box, converts to an int and assigns it to value. 10-decimal is a parameter of parse int
+//			{
+//				var value = parseInt(document.getElementById('number').value, 10);
+//				value = isNaN(value) ? 0 : value; // Checks if it is a number
+//				value = value + 1; //Add 1
+//				document.getElementById('number').value = value;  //Replace value of the textbox
+//			}
+//
+//			function MinusOne()  //Finds the value in the text box, converts to an int and assigns it to value. 10-decimal is a parameter of parse int
+//			{
+//				var value = parseInt(document.getElementById('number').value, 10);
+//				value = isNaN(value) ? 0 : value; // Checks if it is a number
+//				value = value - 1; //Minus 1
+//				document.getElementById('number').value = value; //Replace value of the textbox
+//			}
 		</script>
 	</head>
 	<body>
-	<!--Don Tvedt CSC135 Lab4-->
+	<!--Don Tvedt CSC135 Lab5-->
 		<form>
 			<h1>Up or Down</h1>
 			<input type="text" id="number" value='0'/>
 			<div>
-				<input type="button" onclick="PlusOne()" value="+">
-				<input type="button" onclick="MinusOne()" value="-">
+				<input type="button" id="plus" value="+">
+				<input type="button" id="minus" value="-">
 			</div>
 		</form>
 	</body>
