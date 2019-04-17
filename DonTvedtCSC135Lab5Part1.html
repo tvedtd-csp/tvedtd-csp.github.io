@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<title>Don Tvedt CSC135 Lab5</title>
+		<style type="text/css"> 
+		form {  
+		max-width: 200px;
+		margin: auto;
+		border: 1px solid blue; 
+		border-radius: 15px;
+		padding: 10px;
+		font-family: "Times New Roman", san-serif;
+		background-color: #e67300;
+		} 
+		div {
+		padding: 10px;
+		max-width:50px;
+		margin: auto;
+		}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#plus").click(function(){
+					$("#number").val(parseInt($("#number").val()) + 1);
+				});
+				$("#minus").click(function(){
+					$("#number").val(parseInt($("#number").val()) - 1);
+				});
+			});
+		</script>
+	</head>
+	<body>
+	<!--Don Tvedt CSC135 Lab5-->
+		<form>
+			<h1>Up or Down</h1>
+			<input type="text" id="number" value='0'/>
+			<div>
+				<input type="button" id="plus" value="+">
+				<input type="button" id="minus" value="-">
+			</div>
+		</form>
+	</body>
+</html>

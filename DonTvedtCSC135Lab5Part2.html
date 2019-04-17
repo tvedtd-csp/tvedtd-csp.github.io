@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<title>Don Tvedt CSC135 Lab5Part2</title>
+		<style type="text/css"> 
+		form {  
+		max-width: 200px;
+		margin: auto;
+		border: 1px solid blue; 
+		border-radius: 15px;
+		padding: 10px;
+		font-family: "Times New Roman", san-serif;
+		background-color: #33cc33;
+		} 
+		div {
+		padding: 10px;
+		max-width:50px;
+		margin: auto;
+		}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#fahrenheit").keyup(function(){
+					var myFTemp = parseInt($("#fahrenheit").val());
+					var convertToCel = ((myFTemp - 32) * 5) / 9;
+					$("#celsius").val(convertToCel);
+				});
+				$("#celsius").keyup(function(){
+					var myCTemp = parseInt($("#celsius").val());
+					var convertToFah = ((myCTemp * 9) / 5) + 32;
+					$("#fahrenheit").val(convertToFah);
+				});
+			});
+		</script>
+	</head>
+	<body>
+	<!--Don Tvedt CSC135 Lab5Part2-->
+		<form>
+			<h1>Fahrenheit</h1>
+			<input type="text" id="fahrenheit" value=''/>
+			<h1>Celsius</h1>
+			<input type="text" id="celsius" value=''/>
+		</form>
+	</body>
+</html>
