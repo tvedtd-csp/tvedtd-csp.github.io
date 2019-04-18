@@ -56,23 +56,23 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script>
 			$(document).ready(function(){
-				$("input").click(function(){
-					var myKey = $(this).val();
-					switch (myKey) {
+				$("input").click(function(){  // getting all inputs from the form
+					var myKey = $(this).val(); // getting the value of the input pressed
+					switch (myKey) {  // using the switch statement to take care of all cases, there wasn't a jquery equivalent that I could find
 						case "mrc":
-							break;
+							break;  // do nothing
 						case "m+":
-							break;
+							break;  // do nothing
 						case "m-":
-							break;
+							break;  // do nothing
 						case "c":
-							$("#display").val("");
+							$("#display").val("");  // clear the display
 							break;
 						case "=":
-							$("#display").val(eval($("#display").val()));
+							$("#display").val(eval($("#display").val()));  // eval() whats in the display
 							break;
 						default:
-							$("#display").val($("#display").val() + myKey);
+							$("#display").val($("#display").val() + myKey);  // add the key pressed to the display input
 					}
 				});
 			});
