@@ -3,9 +3,9 @@
 	<head>
 		<title>Don Tvedt CSC135 Assignment 5</title>
 		<style type="text/css"> 
-		body {
-		padding: 10px;
-		background-color: darkgrey;
+		h3 {
+		text-align: center;
+		color: black;
 		}
 		form {  
 		max-width: 210px;
@@ -14,11 +14,7 @@
 		border-radius: 15px;
 		padding: 10px;
 		font-family: "Times New Roman", san-serif;
-		background-color: darkslategray;
-		}
-		h3 {
-		text-align: center;
-		color: ghostwhite;
+		background-color: #ff0066;
 		}
 		.calcinput {
 		margin: auto;
@@ -26,7 +22,7 @@
 		}
 		input {
 		border-radius: 5px;
-		background-color: blanchedalmond;
+		background-color: #ffffcc;
 		width: 49px;
 		padding-top: 4px;
 		padding-bottom: 4px;
@@ -34,16 +30,16 @@
 		margin-bottom: 2px;
 		}
 		.memory {
-		background-color: darkorchid;
+		background-color: #d9b3ff;
 		}
 		.operator {
-		background-color: darkorange;
+		background-color: #00ffcc;
 		}
 		.equal {
-		background-color: green;
+		background-color: #ff80b3;
 		}
 		.clear {
-		background-color: red;
+		background-color: #ffff00;
 		}
 		.myinput {
 		width: 182px;
@@ -52,27 +48,34 @@
 		div {
 		padding-bottom: 7px;
 		}
+		body {
+		padding: 10px;
+		background-color: darkgrey;
+		}
 		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script>
-			function AddToDisplay(ButtonToAdd)  //Adds whatever button pressed to the display of the calculator
-			{
-				var myString = document.getElementById('display').value;  //Get the information on the display
-				var displayOutput = ''  //empty string
-				displayOutput = myString + ButtonToAdd;  //Add the information to the display
-				document.getElementById('display').value = displayOutput;  //Display the new button to the screen
-			}
-
-			function LetsCalculate()  //Calculate the expression in the display using eval()
-			{
-				var myCalculation = eval(document.getElementById('display').value);  //Get the information in the display
-				document.getElementById('display').value = myCalculation; //Replace the display with the answer
-			}
-			
-			function LetsClear()  //Clear the display to start over
-			{
-				var clearDisplay = ''  //Empty string
-				document.getElementById('display').value = clearDisplay; //Clear the display
-			}
+			$(document).ready(function(){
+				$("input").click(function(){
+					var myKey = $(this).val();
+					switch (myKey) {
+						case "mrc":
+							break;
+						case "m+":
+							break;
+						case "m-":
+							break;
+						case "c":
+							$("#display").val("");
+							break;
+						case "=":
+							$("#display").val(eval($("#display").val()));
+							break;
+						default:
+							$("#display").val($("#display").val() + myKey);
+					}
+				});
+			});
 		</script>
 	</head>
 	<body>
@@ -86,23 +89,23 @@
 				<input type="button" value="mrc" class="memory">
 				<input type="button" value="m+" class="memory">
 				<input type="button" value="m-" class="memory">
-				<input type="button" value="/" class="operator" onclick="AddToDisplay('/')">
-				<input type="button" value="7" onclick="AddToDisplay('7')">
-				<input type="button" value="8" onclick="AddToDisplay('8')">
-				<input type="button" value="9" onclick="AddToDisplay('9')">
-				<input type="button" value="*" class="operator" onclick="AddToDisplay('*')">
-				<input type="button" value="4" onclick="AddToDisplay('4')">
-				<input type="button" value="5" onclick="AddToDisplay('5')">
-				<input type="button" value="6" onclick="AddToDisplay('6')">
-				<input type="button" value="+" class="operator" onclick="AddToDisplay('+')">
-				<input type="button" value="1" onclick="AddToDisplay('1')">
-				<input type="button" value="2" onclick="AddToDisplay('2')">
-				<input type="button" value="3" onclick="AddToDisplay('3')">
-				<input type="button" value="-" class="operator" onclick="AddToDisplay('-')">
-				<input type="button" value="0" onclick="AddToDisplay('0')">
-				<input type="button" value="." onclick="AddToDisplay('.')">
-				<input type="button" value="c" class="clear" onclick="LetsClear()">
-				<input type="button" value="=" class="equal" onclick="LetsCalculate()">
+				<input type="button" value="/" class="operator">
+				<input type="button" value="7">
+				<input type="button" value="8">
+				<input type="button" value="9">
+				<input type="button" value="*" class="operator">
+				<input type="button" value="4">
+				<input type="button" value="5">
+				<input type="button" value="6">
+				<input type="button" value="+" class="operator">
+				<input type="button" value="1">
+				<input type="button" value="2">
+				<input type="button" value="3">
+				<input type="button" value="-" class="operator">
+				<input type="button" value="0">
+				<input type="button" value=".">
+				<input type="button" value="c" class="clear">
+				<input type="button" value="=" class="equal">
 			</div>
 		</form>
 	</body>
