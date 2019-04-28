@@ -83,7 +83,8 @@ width: 178px;
 text-align: center;
 }
 main {
-clear: left;
+max-width: 800px;
+margin: auto;
 }
 section {
 width: 525px;
