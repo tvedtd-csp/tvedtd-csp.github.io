@@ -1,0 +1,17 @@
+h1 {
+	padding: 10px;
+	text-align: center;
+	color: linen;
+	font-family: "harrington", san-serif;
+}
+p {
+	padding: 10px;
+	color: purple;
+}
+body {
+	padding: 10px;
+	background: violet;
+}
+a {
+	margin: 10px;
+}

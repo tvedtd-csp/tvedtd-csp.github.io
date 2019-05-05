@@ -1,0 +1,17 @@
+h2 {
+	padding: 10px;
+	background-color: hotpink;
+	text-align: center;
+}
+p {
+	padding: 10px;
+	color: hotpink;
+}
+body {
+	padding: 10px;
+	border: 3px solid hotpink;
+	background: #FFFF5B;
+}
+a {
+	margin: 10px;
+}
